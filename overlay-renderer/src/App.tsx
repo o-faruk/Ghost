@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import type { GhostState } from './types';
+import { QueryPanel } from './components/QueryPanel';
+import { ThinkingIndicator } from './components/ThinkingIndicator';
 import { GhostCursor } from './components/GhostCursor';
 
 export default function App() {
-  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [gs, setGs] = useState<GhostState>({ state: 'idle' });
 
   useEffect(() => {
-    setPos({
-      x: Math.round(window.innerWidth / 2),
-      y: Math.round(window.innerHeight / 2),
-    });
+    window.ghostAPI.onStateChange(setGs);
   }, []);
 
   return (
@@ -21,25 +21,56 @@ export default function App() {
         pointerEvents: 'none',
       }}
     >
-      <GhostCursor x={pos.x} y={pos.y} tooltip="Click here" />
+      {gs.state === 'input' && (
+        <QueryPanel
+          onSubmit={query => window.ghostAPI.analyze(query)}
+          onDismiss={() => window.ghostAPI.dismiss()}
+        />
+      )}
 
-      {/* Debug label — remove once position is confirmed correct */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 12,
-          left: 12,
-          color: 'white',
-          fontSize: 11,
-          fontFamily: 'monospace',
-          background: 'rgba(0,0,0,0.55)',
-          padding: '3px 8px',
-          borderRadius: 4,
-          pointerEvents: 'none',
-        }}
-      >
-        cursor: {pos.x}×{pos.y} | window: {window.innerWidth}×{window.innerHeight}
-      </div>
+      {gs.state === 'thinking' && <ThinkingIndicator />}
+
+      {gs.state === 'result' && (
+        <GhostCursor x={gs.x} y={gs.y} tooltip={gs.tooltip} />
+      )}
+
+      {gs.state === 'error' && (
+        <div
+          style={{
+            position: 'absolute',
+            top: 80,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: 'rgba(24, 8, 8, 0.94)',
+            border: '1px solid rgba(239,68,68,0.45)',
+            borderRadius: 10,
+            padding: '12px 18px',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.55)',
+            maxWidth: 520,
+            animation: 'ghost-appear 0.2s ease-out forwards',
+          }}
+        >
+          <span
+            style={{
+              color: 'rgba(252,165,165,0.95)',
+              fontSize: 13,
+              fontFamily: 'system-ui, -apple-system, sans-serif',
+            }}
+          >
+            ⚠ {gs.message}
+          </span>
+          <div
+            style={{
+              color: 'rgba(255,255,255,0.3)',
+              fontSize: 11,
+              fontFamily: 'system-ui',
+              marginTop: 6,
+            }}
+          >
+            Press Alt+Shift+G to try again
+          </div>
+        </div>
+      )}
     </div>
   );
 }
