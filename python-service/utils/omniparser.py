@@ -32,8 +32,6 @@ def _load_model():
             "Run `python setup_models.py` in the python-service directory first."
         )
 
-    # Import here so the service starts even if ultralytics isn't installed yet
-    # (gives a cleaner error message from the /analyze endpoint)
     try:
         from ultralytics import YOLO
     except ImportError:
@@ -43,21 +41,42 @@ def _load_model():
         )
 
     import os
-    os.environ.setdefault("YOLO_VERBOSE", "False")  # suppress YOLO per-frame logs
+    os.environ.setdefault("YOLO_VERBOSE", "False")
 
     _model = YOLO(str(MODEL_PATH))
     return _model
 
 
+def _iou(a: list[int], b: list[int]) -> float:
+    """Intersection-over-union of two [x1,y1,x2,y2] boxes."""
+    ix1, iy1 = max(a[0], b[0]), max(a[1], b[1])
+    ix2, iy2 = min(a[2], b[2]), min(a[3], b[3])
+    inter = max(0, ix2 - ix1) * max(0, iy2 - iy1)
+    if inter == 0:
+        return 0.0
+    area_a = (a[2] - a[0]) * (a[3] - a[1])
+    area_b = (b[2] - b[0]) * (b[3] - b[1])
+    return inter / (area_a + area_b - inter)
+
+
+def _nms(elements: list[DetectedElement], iou_threshold: float = 0.5) -> list[DetectedElement]:
+    """Greedy NMS — keeps highest-confidence box when two overlap significantly."""
+    kept: list[DetectedElement] = []
+    for elem in elements:  # already sorted by confidence descending
+        if all(_iou(elem["bbox"], k["bbox"]) < iou_threshold for k in kept):
+            kept.append(elem)
+    return kept
+
+
 def detect_elements(
     image: Image.Image,
-    conf_threshold: float = 0.05,
-    max_elements: int = 100,
+    conf_threshold: float = 0.15,
+    max_elements: int = 60,
 ) -> list[DetectedElement]:
     """
     Run YOLO detection on a PIL image.
-    Returns up to max_elements bounding boxes sorted by confidence (descending).
-    Coordinates are in the original image's pixel space.
+    Returns up to max_elements bounding boxes sorted by confidence (descending),
+    with NMS applied to remove heavily overlapping duplicates.
     """
     model = _load_model()
 
@@ -68,10 +87,10 @@ def detect_elements(
         for box in result.boxes:
             x1, y1, x2, y2 = (int(v) for v in box.xyxy[0].tolist())
             conf = float(box.conf[0])
-            # Skip degenerate boxes
             if x2 <= x1 or y2 <= y1:
                 continue
             elements.append({"bbox": [x1, y1, x2, y2], "confidence": round(conf, 3)})
 
     elements.sort(key=lambda e: e["confidence"], reverse=True)
+    elements = _nms(elements)
     return elements[:max_elements]

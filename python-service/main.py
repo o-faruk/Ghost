@@ -71,9 +71,12 @@ def _annotate(image: Image.Image, elements: list[dict]) -> str:
         x1, y1, x2, y2 = elem["bbox"]
         draw.rectangle([x1, y1, x2, y2], outline=(255, 30, 90), width=2)
         label = str(i)
-        lw = len(label) * 8 + 6
-        draw.rectangle([x1, y1 - 16, x1 + lw, y1], fill=(255, 30, 90))
-        draw.text((x1 + 3, y1 - 14), label, fill="white")
+        # Larger label box so numbers are legible after downscaling
+        lw = len(label) * 11 + 8
+        lh = 20
+        tag_y = max(0, y1 - lh)
+        draw.rectangle([x1, tag_y, x1 + lw, tag_y + lh], fill=(255, 30, 90))
+        draw.text((x1 + 4, tag_y + 3), label, fill="white")
 
     # Downscale for Claude to reduce token cost and latency
     max_w = 1280
@@ -181,16 +184,16 @@ async def analyze(request: AnalyzeRequest):
                         {
                             "type": "text",
                             "text": (
-                                f'The screenshot shows a desktop UI with {len(elements)} numbered '
-                                f'elements (red boxes, 0-indexed).\n'
+                                f'This is a {image.width}x{image.height} desktop screenshot with '
+                                f'{len(elements)} numbered UI elements (red boxes, 0-indexed).\n'
+                                f'Screen regions: top ~30px = window title bar / OS chrome, '
+                                f'bottom ~50px = taskbar, right edge = window controls (minimize/maximize/close).\n\n'
                                 f'User query: "{request.query}"\n\n'
                                 f'Rules:\n'
-                                f'- "close the window" or "close window" = the OS window X button, '
-                                f'typically the rightmost element in the top-right corner of the screen.\n'
-                                f'- "close tab" = the × on a browser tab, NOT the window X button.\n'
-                                f'- Match the query to the most semantically correct element, '
-                                f'considering its position on screen (title bar = top strip, '
-                                f'taskbar = bottom strip, browser toolbar = row below tabs).\n\n'
+                                f'- "close the window" = the X button at the very top-right corner '
+                                f'(highest-numbered pixel column, lowest-numbered pixel row).\n'
+                                f'- "close tab" = the × on a browser tab row, not the window X.\n'
+                                f'- Pick the element whose position AND function best match the query.\n\n'
                                 f'Call point_to_element with the best matching element index.'
                             ),
                         },
