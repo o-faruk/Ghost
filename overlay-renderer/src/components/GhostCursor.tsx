@@ -58,12 +58,12 @@ export function GhostCursor({ x, y, tooltip }: GhostCursorProps) {
       {/* Tooltip pill */}
       {tooltip && (
         <motion.div
-          className="absolute whitespace-nowrap text-white text-sm font-medium px-3 py-1.5 rounded-lg backdrop-blur-sm"
+          className="absolute whitespace-nowrap text-white text-sm font-medium px-3 py-1.5 rounded-lg"
           style={{
             left: 30,
             top: -4,
-            background: 'rgba(109, 40, 217, 0.85)',
-            boxShadow: '0 4px 16px rgba(109,40,217,0.45)',
+            background: 'rgba(109, 40, 217, 0.92)',
+            boxShadow: '0 4px 16px rgba(109,40,217,0.5)',
           }}
           initial={{ opacity: 0, x: -8 }}
           animate={{ opacity: 1, x: 0 }}
