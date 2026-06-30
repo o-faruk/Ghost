@@ -1,13 +1,45 @@
+import { useState, useEffect } from 'react';
 import { GhostCursor } from './components/GhostCursor';
 
-// Hardcoded target for scaffold verification.
-// Replace with IPC-driven state (window.ghostAPI.onShowGhost) in the next milestone.
-const DEMO_TARGET = { x: 600, y: 400, tooltip: 'Click here' };
-
 export default function App() {
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    setPos({
+      x: Math.round(window.innerWidth / 2),
+      y: Math.round(window.innerHeight / 2),
+    });
+  }, []);
+
   return (
-    <div className="relative w-screen h-screen overflow-hidden pointer-events-none">
-      <GhostCursor x={DEMO_TARGET.x} y={DEMO_TARGET.y} tooltip={DEMO_TARGET.tooltip} />
+    <div
+      style={{
+        position: 'relative',
+        width: '100vw',
+        height: '100vh',
+        overflow: 'hidden',
+        pointerEvents: 'none',
+      }}
+    >
+      <GhostCursor x={pos.x} y={pos.y} tooltip="Click here" />
+
+      {/* Debug label — remove once position is confirmed correct */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 12,
+          left: 12,
+          color: 'white',
+          fontSize: 11,
+          fontFamily: 'monospace',
+          background: 'rgba(0,0,0,0.55)',
+          padding: '3px 8px',
+          borderRadius: 4,
+          pointerEvents: 'none',
+        }}
+      >
+        cursor: {pos.x}×{pos.y} | window: {window.innerWidth}×{window.innerHeight}
+      </div>
     </div>
   );
 }

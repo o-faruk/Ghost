@@ -21,7 +21,7 @@ function createOverlayWindow(): void {
     // focusable:false keeps the overlay out of the focus chain so Alt+Tab is unaffected.
     // Change to true when the text-input panel is added in the next milestone.
     focusable: false,
-    show: false,
+    show: false, // shown after renderer finishes loading (see did-finish-load below)
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
@@ -44,6 +44,11 @@ function createOverlayWindow(): void {
   } else {
     overlayWindow.loadFile(path.join(__dirname, '../renderer/index.html'));
   }
+
+  // Show only after the React app finishes loading to avoid a blank flash
+  overlayWindow.webContents.once('did-finish-load', () => {
+    overlayWindow?.show();
+  });
 
   overlayWindow.on('closed', () => {
     overlayWindow = null;
