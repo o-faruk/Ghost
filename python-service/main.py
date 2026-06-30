@@ -124,36 +124,29 @@ def _build_prompt(query: str, image: Image.Image, elements: list[dict]) -> str:
         return f"{name}:\n" + "\n".join(f"  {e}" for e in items)
 
     lines = [
-        f"Desktop screenshot ({w}x{h}px). The image shows the screen with numbered red boxes "
-        f"on each detected UI element. Coordinates below are normalized 0.0–1.0 "
-        f"(x: left=0, right=1 | y: top=0, bottom=1).",
+        f"Desktop screenshot ({w}x{h}px). Red numbered boxes in the image mark detected "
+        f"UI elements. Coordinates below are normalized 0.0–1.0 (x: left→right, y: top→bottom).",
         "",
-        "STEP 1 — Use the IMAGE to visually identify what each numbered element is "
-        "(icon, button label, menu text, etc.). The numbers in red boxes in the image "
-        "correspond to the indices in the table below.",
+        fmt_group("OS title bar / window controls (y<0.03)", title_bar),
+        fmt_group("Browser tab row (y 0.03–0.06)", tab_row),
+        fmt_group("App toolbar / nav bar (y 0.06–0.12)", nav_bar),
+        fmt_group("Page content (y 0.12–0.93)", content),
+        fmt_group("Taskbar (y>0.93)", taskbar),
         "",
-        "STEP 2 — Use the coordinate table (grouped by screen region) to understand "
-        "WHERE each element is located.",
+        f'User query: "{query}"',
         "",
-        fmt_group("OS title bar / window controls (y<0.03) — minimize, maximize, close X", title_bar),
-        fmt_group("Browser tab row (y 0.03–0.06) — tabs, new-tab (+) button", tab_row),
-        fmt_group("App toolbar / nav bar (y 0.06–0.12) — address bar, menu bar, toolbars", nav_bar),
-        fmt_group("Page content area (y 0.12–0.93)", content),
-        fmt_group("Taskbar (y>0.93) — pinned apps, system tray", taskbar),
+        "How to pick the right element:",
+        "• Window controls — use position only:",
+        "  - close window/X → largest x in 'OS title bar'",
+        "  - minimize → second-largest x in 'OS title bar'",
+        "  - maximize/restore → third-largest x in 'OS title bar'",
+        "  - close tab → largest x in 'Browser tab row'",
+        "  - new tab (+) → second-largest x in 'Browser tab row'",
+        "• Everything else — look at the image to visually identify each numbered element "
+        "(read button labels, icons, menu text), then pick the one that matches the query. "
+        "Use the region group as a sanity check for plausibility.",
         "",
-        f'STEP 3 — User query: "{query}"',
-        "",
-        "Positional shortcuts (use these FIRST for window/tab controls):",
-        "• 'close window' / 'X button' → rightmost element in OS title bar group",
-        "• 'minimize' → second-rightmost in OS title bar",
-        "• 'maximize/restore' → third-rightmost in OS title bar",
-        "• 'close tab' → rightmost in Browser tab row",
-        "• 'new tab' → second-rightmost in Browser tab row (the + button, left of window controls)",
-        "",
-        "For ALL OTHER queries: identify the element visually from the image first, "
-        "then confirm it is in a sensible screen region. Do NOT pick purely by position.",
-        "",
-        "Call point_to_element with the index of the best match.",
+        "Call point_to_element with the index of the best matching element.",
     ]
     return "\n".join(lines)
 
