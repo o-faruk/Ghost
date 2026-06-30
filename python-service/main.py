@@ -91,6 +91,42 @@ def _annotate(image: Image.Image, elements: list[dict]) -> str:
     return base64.b64encode(buf.getvalue()).decode()
 
 
+def _build_prompt(query: str, image: Image.Image, elements: list[dict]) -> str:
+    """
+    Build the Claude user-text prompt.
+    Includes a coordinate table so Claude can reason about screen position
+    rather than relying solely on visual interpretation of tiny label numbers.
+    """
+    w, h = image.width, image.height
+    lines = [
+        f"Desktop screenshot: {w}x{h} px.",
+        f"Screen regions: top ~30px = title bar/OS window chrome with minimize/maximize/CLOSE-X at far right; "
+        f"bottom ~50px = taskbar; right edge = window controls.",
+        "",
+        f"Detected elements ({len(elements)} total, 0-indexed):",
+        "index | center_x | center_y | width | height  (all in pixels)",
+    ]
+    for i, elem in enumerate(elements):
+        x1, y1, x2, y2 = elem["bbox"]
+        cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
+        ew, eh = x2 - x1, y2 - y1
+        lines.append(f"  {i:>3}: ({cx:>5}, {cy:>5})  {ew:>4}x{eh:<4}")
+
+    lines += [
+        "",
+        f'User query: "{query}"',
+        "",
+        "Rules:",
+        "- 'close the window' / 'close window' / 'X button' = element in the title-bar strip "
+        "(cy < 30px) AND furthest to the RIGHT (largest cx). That is the OS close button.",
+        "- 'close tab' = element on the browser tab row, NOT the rightmost title-bar button.",
+        "- For other queries, match by function first, then by screen position.",
+        "",
+        "Call point_to_element with the index of the best matching element.",
+    ]
+    return "\n".join(lines)
+
+
 # ─── Endpoints ────────────────────────────────────────────────────────────────
 
 @app.get("/health")
@@ -183,19 +219,7 @@ async def analyze(request: AnalyzeRequest):
                         },
                         {
                             "type": "text",
-                            "text": (
-                                f'This is a {image.width}x{image.height} desktop screenshot with '
-                                f'{len(elements)} numbered UI elements (red boxes, 0-indexed).\n'
-                                f'Screen regions: top ~30px = window title bar / OS chrome, '
-                                f'bottom ~50px = taskbar, right edge = window controls (minimize/maximize/close).\n\n'
-                                f'User query: "{request.query}"\n\n'
-                                f'Rules:\n'
-                                f'- "close the window" = the X button at the very top-right corner '
-                                f'(highest-numbered pixel column, lowest-numbered pixel row).\n'
-                                f'- "close tab" = the × on a browser tab row, not the window X.\n'
-                                f'- Pick the element whose position AND function best match the query.\n\n'
-                                f'Call point_to_element with the best matching element index.'
-                            ),
+                            "text": _build_prompt(request.query, image, elements),
                         },
                     ],
                 }
