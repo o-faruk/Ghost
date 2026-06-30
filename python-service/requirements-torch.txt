@@ -1,0 +1,7 @@
+# Install AFTER requirements.txt.
+# CPU-only torch wheel — safe for AMD GPUs on Windows (ROCm on Windows is limited).
+# On Python 3.13 the CPU wheel is the most reliable option.
+--index-url https://download.pytorch.org/whl/cpu
+torch>=2.3.0
+torchvision>=0.18.0
+ultralytics>=8.2.0

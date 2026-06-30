@@ -8,3 +8,5 @@ release/
 python-service/__pycache__/
 python-service/.venv/
 python-service/*.egg-info/
+python-service/models/
+python-service/.env
