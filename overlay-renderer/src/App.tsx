@@ -38,9 +38,9 @@ export default function App() {
         <div
           style={{
             position: 'absolute',
-            top: 80,
+            top: '50%',
             left: '50%',
-            transform: 'translateX(-50%)',
+            transform: 'translate(-50%, -50%)',
             background: 'rgba(24, 8, 8, 0.94)',
             border: '1px solid rgba(239,68,68,0.45)',
             borderRadius: 10,
