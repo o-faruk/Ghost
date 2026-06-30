@@ -144,7 +144,9 @@ def _build_prompt(query: str, image: Image.Image, elements: list[dict]) -> str:
         "  - maximize/restore → third-largest x in 'OS title bar'",
         "  - close tab → largest x in 'Browser chrome'",
         "  - new tab (+) → second-largest x in 'Browser chrome'",
-        "  - address bar / URL bar / omnibox → WIDEST element (largest w) in 'Browser chrome'",
+        "  - address bar / URL bar / omnibox → in 'Browser chrome', pick the element with "
+        "largest w AND x < 0.80 (exclude right-side icons). The address bar input spans "
+        "the center of the screen and is much wider than any individual icon.",
         "• Everything else — visually identify each numbered element in the image "
         "(read labels, icons, text), pick the best match, use region as a sanity check.",
         "",
@@ -280,8 +282,9 @@ async def analyze(request: AnalyzeRequest):
     x1, y1, x2, y2 = elem["bbox"]
     cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
 
+    bw = x2 - x1
     print(
-        f"[ghost] → element {idx} at ({cx},{cy}), "
+        f"[ghost] → element {idx} at ({cx},{cy}) size={bw}x{y2-y1}px, "
         f"conf={elem['confidence']:.2f}, tooltip='{tooltip}' "
         f"| total {time.perf_counter() - t0:.2f}s"
     )
