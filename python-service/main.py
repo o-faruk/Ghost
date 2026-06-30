@@ -2,6 +2,7 @@ from __future__ import annotations
 import base64
 import io
 import os
+from pathlib import Path
 import time
 
 from dotenv import load_dotenv
@@ -122,6 +123,15 @@ async def analyze(request: AnalyzeRequest):
 
     # 3. Annotate screenshot with numbered boxes for Claude
     annotated_b64 = _annotate(image, elements)
+
+    # Save annotated image for debugging — open debug_annotated.png to see what Claude sees
+    try:
+        debug_img_bytes = base64.b64decode(annotated_b64)
+        debug_path = Path(__file__).parent / "debug_annotated.png"
+        debug_path.write_bytes(debug_img_bytes)
+        print(f"[ghost] debug image saved → {debug_path}")
+    except Exception:
+        pass
 
     # 4. Claude selects the target element via tool use (guaranteed structured output)
     try:
