@@ -124,25 +124,34 @@ def _build_prompt(query: str, image: Image.Image, elements: list[dict]) -> str:
         return f"{name}:\n" + "\n".join(f"  {e}" for e in items)
 
     lines = [
-        f"Desktop screenshot ({w}x{h}px). Coordinates are normalized 0.0–1.0 "
+        f"Desktop screenshot ({w}x{h}px). The image shows the screen with numbered red boxes "
+        f"on each detected UI element. Coordinates below are normalized 0.0–1.0 "
         f"(x: left=0, right=1 | y: top=0, bottom=1).",
         "",
-        fmt_group("OS title bar / window controls (y<0.03)", title_bar),
-        fmt_group("Browser tab row (y 0.03–0.06)", tab_row),
-        fmt_group("Navigation / toolbar bar (y 0.06–0.12)", nav_bar),
+        "STEP 1 — Use the IMAGE to visually identify what each numbered element is "
+        "(icon, button label, menu text, etc.). The numbers in red boxes in the image "
+        "correspond to the indices in the table below.",
+        "",
+        "STEP 2 — Use the coordinate table (grouped by screen region) to understand "
+        "WHERE each element is located.",
+        "",
+        fmt_group("OS title bar / window controls (y<0.03) — minimize, maximize, close X", title_bar),
+        fmt_group("Browser tab row (y 0.03–0.06) — tabs, new-tab (+) button", tab_row),
+        fmt_group("App toolbar / nav bar (y 0.06–0.12) — address bar, menu bar, toolbars", nav_bar),
         fmt_group("Page content area (y 0.12–0.93)", content),
-        fmt_group("Taskbar (y>0.93)", taskbar),
+        fmt_group("Taskbar (y>0.93) — pinned apps, system tray", taskbar),
         "",
-        f'User query: "{query}"',
+        f'STEP 3 — User query: "{query}"',
         "",
-        "Selection rules (apply in order):",
-        "1. 'close the window' / 'close window' / 'X button' →",
-        "   Pick the element in 'OS title bar' with the LARGEST x value (rightmost).",
-        "   If title bar is empty, use the LARGEST-x element in 'Browser tab row'.",
-        "2. 'close tab' → rightmost element in 'Browser tab row' (the × on the active tab).",
-        "3. 'minimize' → second-rightmost element in OS title bar.",
-        "4. 'maximize' / 'restore' → third-rightmost element in OS title bar.",
-        "5. All other queries → match by visual function and content, using region as tie-breaker.",
+        "Positional shortcuts (use these FIRST for window/tab controls):",
+        "• 'close window' / 'X button' → rightmost element in OS title bar group",
+        "• 'minimize' → second-rightmost in OS title bar",
+        "• 'maximize/restore' → third-rightmost in OS title bar",
+        "• 'close tab' → rightmost in Browser tab row",
+        "• 'new tab' → second-rightmost in Browser tab row (the + button, left of window controls)",
+        "",
+        "For ALL OTHER queries: identify the element visually from the image first, "
+        "then confirm it is in a sensible screen region. Do NOT pick purely by position.",
         "",
         "Call point_to_element with the index of the best match.",
     ]
