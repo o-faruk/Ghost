@@ -93,36 +93,58 @@ def _annotate(image: Image.Image, elements: list[dict]) -> str:
 
 def _build_prompt(query: str, image: Image.Image, elements: list[dict]) -> str:
     """
-    Build the Claude user-text prompt.
-    Includes a coordinate table so Claude can reason about screen position
-    rather than relying solely on visual interpretation of tiny label numbers.
+    Build the Claude prompt with normalized (0.0–1.0) coordinates grouped by
+    screen region so Claude can reason about position without knowing resolution.
     """
     w, h = image.width, image.height
-    lines = [
-        f"Desktop screenshot: {w}x{h} px.",
-        f"Screen regions: top ~30px = title bar/OS window chrome with minimize/maximize/CLOSE-X at far right; "
-        f"bottom ~50px = taskbar; right edge = window controls.",
-        "",
-        f"Detected elements ({len(elements)} total, 0-indexed):",
-        "index | center_x | center_y | width | height  (all in pixels)",
-    ]
+
+    # Group elements into screen regions using normalized y
+    title_bar, tab_row, nav_bar, taskbar, content = [], [], [], [], []
     for i, elem in enumerate(elements):
         x1, y1, x2, y2 = elem["bbox"]
-        cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
-        ew, eh = x2 - x1, y2 - y1
-        lines.append(f"  {i:>3}: ({cx:>5}, {cy:>5})  {ew:>4}x{eh:<4}")
+        cx = (x1 + x2) / 2
+        cy = (y1 + y2) / 2
+        xn = round(cx / w, 3)
+        yn = round(cy / h, 3)
+        entry = f"{i:>3} x={xn:.3f} y={yn:.3f}"
+        if yn < 0.03:           # top 3% — OS title bar / window controls
+            title_bar.append(entry)
+        elif yn < 0.06:         # 3-6% — browser tab row
+            tab_row.append(entry)
+        elif yn < 0.12:         # 6-12% — nav / toolbar / bookmarks bar
+            nav_bar.append(entry)
+        elif yn > 0.93:         # bottom 7% — taskbar
+            taskbar.append(entry)
+        else:
+            content.append(entry)
 
-    lines += [
+    def fmt_group(name: str, items: list[str]) -> str:
+        if not items:
+            return f"{name}: (none detected)"
+        return f"{name}:\n" + "\n".join(f"  {e}" for e in items)
+
+    lines = [
+        f"Desktop screenshot ({w}x{h}px). Coordinates are normalized 0.0–1.0 "
+        f"(x: left=0, right=1 | y: top=0, bottom=1).",
+        "",
+        fmt_group("OS title bar / window controls (y<0.03)", title_bar),
+        fmt_group("Browser tab row (y 0.03–0.06)", tab_row),
+        fmt_group("Navigation / toolbar bar (y 0.06–0.12)", nav_bar),
+        fmt_group("Page content area (y 0.12–0.93)", content),
+        fmt_group("Taskbar (y>0.93)", taskbar),
         "",
         f'User query: "{query}"',
         "",
-        "Rules:",
-        "- 'close the window' / 'close window' / 'X button' = element in the title-bar strip "
-        "(cy < 30px) AND furthest to the RIGHT (largest cx). That is the OS close button.",
-        "- 'close tab' = element on the browser tab row, NOT the rightmost title-bar button.",
-        "- For other queries, match by function first, then by screen position.",
+        "Selection rules (apply in order):",
+        "1. 'close the window' / 'close window' / 'X button' →",
+        "   Pick the element in 'OS title bar' with the LARGEST x value (rightmost).",
+        "   If title bar is empty, use the LARGEST-x element in 'Browser tab row'.",
+        "2. 'close tab' → rightmost element in 'Browser tab row' (the × on the active tab).",
+        "3. 'minimize' → second-rightmost element in OS title bar.",
+        "4. 'maximize' / 'restore' → third-rightmost element in OS title bar.",
+        "5. All other queries → match by visual function and content, using region as tie-breaker.",
         "",
-        "Call point_to_element with the index of the best matching element.",
+        "Call point_to_element with the index of the best match.",
     ]
     return "\n".join(lines)
 
