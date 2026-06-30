@@ -99,20 +99,22 @@ def _build_prompt(query: str, image: Image.Image, elements: list[dict]) -> str:
     w, h = image.width, image.height
 
     # Group elements into screen regions using normalized y
-    title_bar, tab_row, nav_bar, taskbar, content = [], [], [], [], []
+    title_bar, browser_chrome, toolbar, taskbar, content = [], [], [], [], []
     for i, elem in enumerate(elements):
         x1, y1, x2, y2 = elem["bbox"]
         cx = (x1 + x2) / 2
         cy = (y1 + y2) / 2
+        ew = x2 - x1
         xn = round(cx / w, 3)
         yn = round(cy / h, 3)
-        entry = f"{i:>3} x={xn:.3f} y={yn:.3f}"
-        if yn < 0.03:           # top 3% — OS title bar / window controls
+        wn = round(ew / w, 3)
+        entry = f"{i:>3} x={xn:.3f} y={yn:.3f} w={wn:.3f}"
+        if yn < 0.025:          # top 2.5% — OS title bar + window controls
             title_bar.append(entry)
-        elif yn < 0.06:         # 3-6% — browser tab row
-            tab_row.append(entry)
-        elif yn < 0.12:         # 6-12% — nav / toolbar / bookmarks bar
-            nav_bar.append(entry)
+        elif yn < 0.08:         # 2.5-8% — browser chrome (tabs + address bar + nav buttons)
+            browser_chrome.append(entry)
+        elif yn < 0.13:         # 8-13% — secondary toolbars (bookmarks, app toolbars)
+            toolbar.append(entry)
         elif yn > 0.93:         # bottom 7% — taskbar
             taskbar.append(entry)
         else:
@@ -127,24 +129,24 @@ def _build_prompt(query: str, image: Image.Image, elements: list[dict]) -> str:
         f"Desktop screenshot ({w}x{h}px). Red numbered boxes in the image mark detected "
         f"UI elements. Coordinates below are normalized 0.0–1.0 (x: left→right, y: top→bottom).",
         "",
-        fmt_group("OS title bar / window controls (y<0.03)", title_bar),
-        fmt_group("Browser tab row (y 0.03–0.06)", tab_row),
-        fmt_group("App toolbar / nav bar (y 0.06–0.12)", nav_bar),
-        fmt_group("Page content (y 0.12–0.93)", content),
+        fmt_group("OS title bar / window controls (y<0.025)", title_bar),
+        fmt_group("Browser chrome — tabs, address bar, nav buttons (y 0.025–0.08)  ← address bar is the WIDEST element here (w>0.3)", browser_chrome),
+        fmt_group("Secondary toolbar — bookmarks bar, app menus (y 0.08–0.13)", toolbar),
+        fmt_group("Page content (y 0.13–0.93)", content),
         fmt_group("Taskbar (y>0.93)", taskbar),
         "",
         f'User query: "{query}"',
         "",
         "How to pick the right element:",
-        "• Window controls — use position only:",
+        "• Window / tab controls (position-based):",
         "  - close window/X → largest x in 'OS title bar'",
         "  - minimize → second-largest x in 'OS title bar'",
         "  - maximize/restore → third-largest x in 'OS title bar'",
-        "  - close tab → largest x in 'Browser tab row'",
-        "  - new tab (+) → second-largest x in 'Browser tab row'",
-        "• Everything else — look at the image to visually identify each numbered element "
-        "(read button labels, icons, menu text), then pick the one that matches the query. "
-        "Use the region group as a sanity check for plausibility.",
+        "  - close tab → largest x in 'Browser chrome'",
+        "  - new tab (+) → second-largest x in 'Browser chrome'",
+        "  - address bar / URL bar / omnibox → WIDEST element (largest w) in 'Browser chrome'",
+        "• Everything else — visually identify each numbered element in the image "
+        "(read labels, icons, text), pick the best match, use region as a sanity check.",
         "",
         "Call point_to_element with the index of the best matching element.",
     ]
