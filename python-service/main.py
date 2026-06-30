@@ -171,10 +171,17 @@ async def analyze(request: AnalyzeRequest):
                         {
                             "type": "text",
                             "text": (
-                                f'The screenshot shows a UI with {len(elements)} numbered '
+                                f'The screenshot shows a desktop UI with {len(elements)} numbered '
                                 f'elements (red boxes, 0-indexed).\n'
                                 f'User query: "{request.query}"\n\n'
-                                f'Call point_to_element with the best matching element.'
+                                f'Rules:\n'
+                                f'- "close the window" or "close window" = the OS window X button, '
+                                f'typically the rightmost element in the top-right corner of the screen.\n'
+                                f'- "close tab" = the × on a browser tab, NOT the window X button.\n'
+                                f'- Match the query to the most semantically correct element, '
+                                f'considering its position on screen (title bar = top strip, '
+                                f'taskbar = bottom strip, browser toolbar = row below tabs).\n\n'
+                                f'Call point_to_element with the best matching element index.'
                             ),
                         },
                     ],
