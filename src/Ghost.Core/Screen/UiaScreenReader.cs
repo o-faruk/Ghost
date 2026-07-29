@@ -89,6 +89,10 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
                 .Where(e => e is not null)
                 .Select(e => e!)
                 .ToList();
+
+            Log.Debug(
+                "Ghost UIA capture for {ProcessName}: {RawCount} raw descendants, {MappedCount} survived mapping/filtering",
+                processName, descendants.Length, mapped.Count);
         }
 
         var uncappedCount = mapped.Count;
@@ -188,19 +192,28 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
                 parentRuntimeId = null;
             }
         }
-        catch
+        catch (Exception ex)
         {
             // Some providers throw on properties they don't actually support despite being cached.
+            Log.Debug(ex, "failed to map a UIA element, skipping it");
             return null;
         }
 
-        if (bounds.IsDegenerate || isOffscreen)
+        if (bounds.IsDegenerate)
         {
+            Log.Debug("skipped {ControlType} {Name}: degenerate bounds {Bounds}", controlType, name, bounds);
+            return null;
+        }
+
+        if (isOffscreen)
+        {
+            Log.Debug("skipped {ControlType} {Name}: offscreen", controlType, name);
             return null;
         }
 
         if (!Intersects(bounds, windowBounds))
         {
+            Log.Debug("skipped {ControlType} {Name}: bounds {Bounds} don't intersect window {WindowBounds}", controlType, name, bounds, windowBounds);
             return null;
         }
 

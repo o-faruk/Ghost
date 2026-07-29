@@ -1,4 +1,5 @@
 using Ghost.Core.Config;
+using Ghost.Core.Logging;
 using Ghost.Core.Models;
 using Ghost.Core.Resolve;
 using Ghost.Core.Screen;
@@ -6,6 +7,11 @@ using Ghost.Eval;
 
 var fixturesRoot = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "fixtures");
 fixturesRoot = Path.GetFullPath(fixturesRoot);
+
+// `capture` is where UIA filtering decisions matter most; run it at Debug so skip reasons
+// (offscreen, degenerate bounds, mapping exceptions) are visible instead of silently swallowed.
+var logLevel = args.Length > 0 && args[0] == "capture" ? "Debug" : "Warning";
+LoggingSetup.Configure(new LoggingConfig { Level = logLevel, FileRetentionDays = 7 });
 
 if (args.Length == 0)
 {
