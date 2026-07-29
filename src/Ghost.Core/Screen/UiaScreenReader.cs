@@ -78,12 +78,17 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
         var processName = SafeProcessName(window.Properties.ProcessId.ValueOrDefault);
         var windowTitle = window.Properties.Name.ValueOrDefault ?? string.Empty;
 
-        var mapped = new List<UiElement>();
+        List<UiElement> mapped;
 
         var cacheRequest = BuildCacheRequest(automation);
         using (cacheRequest.Activate())
         {
-            Walk(window, depth: 1, parentRuntimeId: null, windowBounds, mapped);
+            var descendants = window.FindAllDescendants();
+            mapped = descendants
+                .Select(d => Map(d, windowBounds))
+                .Where(e => e is not null)
+                .Select(e => e!)
+                .ToList();
         }
 
         var uncappedCount = mapped.Count;
@@ -115,7 +120,7 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
     {
         var cacheRequest = new CacheRequest
         {
-            TreeScope = TreeScope.Element,
+            TreeScope = TreeScope.Descendants,
             AutomationElementMode = AutomationElementMode.None,
         };
         cacheRequest.Add(automation.PropertyLibrary.Element.Name);
@@ -134,39 +139,7 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
         return cacheRequest;
     }
 
-    /// <summary>
-    /// Depth-first walk of the window's children. Each FindAllChildren call is one COM round trip
-    /// that returns every requested property for that level already cached, which is the
-    /// performance-critical part; we still recurse level by level (rather than one flat
-    /// FindAllDescendants) so Depth can be tracked exactly for the 400-element cap and the
-    /// StructureHash ordering.
-    /// </summary>
-    private void Walk(AutomationElement node, int depth, string? parentRuntimeId, PhysicalRect windowBounds, List<UiElement> into)
-    {
-        AutomationElement[] children;
-        try
-        {
-            children = node.FindAllChildren();
-        }
-        catch
-        {
-            return;
-        }
-
-        foreach (var child in children)
-        {
-            var mapped = Map(child, windowBounds, depth, parentRuntimeId);
-            if (mapped is not null)
-            {
-                into.Add(mapped);
-            }
-
-            // Recurse even when this node was filtered out (e.g. an unnamed Pane) — it can still contain named children.
-            Walk(child, depth + 1, mapped?.RuntimeId ?? parentRuntimeId, windowBounds, into);
-        }
-    }
-
-    private static UiElement? Map(AutomationElement e, PhysicalRect windowBounds, int depth, string? parentRuntimeId)
+    private static UiElement? Map(AutomationElement e, PhysicalRect windowBounds)
     {
         string name;
         ControlType controlType;
@@ -180,6 +153,8 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
         string? value;
         PhysicalRect bounds;
         string runtimeId;
+        int depth;
+        string? parentRuntimeId;
 
         try
         {
@@ -196,8 +171,22 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
             className = e.Properties.ClassName.ValueOrDefault;
             value = e.Patterns.Value.PatternOrDefault?.Value.ValueOrDefault;
 
+            // RuntimeId is a UIA "path" of ints reflecting ancestry; its length is a cheap,
+            // no-extra-COM-call proxy for tree depth, and trimming its last segment gives the
+            // parent's RuntimeId, since FindAllDescendants doesn't expose hierarchy directly.
             var runtimeIdInts = e.Properties.RuntimeId.ValueOrDefault;
-            runtimeId = runtimeIdInts is { Length: > 0 } ? string.Join(".", runtimeIdInts) : Guid.NewGuid().ToString("N");
+            if (runtimeIdInts is { Length: > 0 })
+            {
+                runtimeId = string.Join(".", runtimeIdInts);
+                depth = runtimeIdInts.Length;
+                parentRuntimeId = runtimeIdInts.Length > 1 ? string.Join(".", runtimeIdInts[..^1]) : null;
+            }
+            else
+            {
+                runtimeId = Guid.NewGuid().ToString("N");
+                depth = 1;
+                parentRuntimeId = null;
+            }
         }
         catch
         {
