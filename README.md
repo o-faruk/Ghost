@@ -47,8 +47,8 @@ docs/coordinate-system.md
 
 ## Building
 
-Requires the .NET SDK and Windows (Ghost.Core targets `net8.0-windows` because later phases need
-Windows-only UIA and interop APIs; WPF/UI itself doesn't start until Phase 4).
+Requires the .NET 10 SDK and Windows (Ghost.Core targets `net10.0-windows` because later phases
+need Windows-only UIA and interop APIs; WPF/UI itself doesn't start until Phase 4).
 
 ```
 dotnet build
