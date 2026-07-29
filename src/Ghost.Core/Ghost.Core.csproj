@@ -13,6 +13,9 @@
   <ItemGroup>
     <PackageReference Include="FlaUI.Core" Version="4.0.0" />
     <PackageReference Include="FlaUI.UIA3" Version="4.0.0" />
+    <!-- FlaUI.Core transitively pulls System.Drawing.Common 5.0.2, which has a known critical
+         vulnerability (GHSA-rxg9-xrhp-64gj). Pin a patched version directly to override it. -->
+    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
     <PackageReference Include="Serilog" Version="4.0.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
