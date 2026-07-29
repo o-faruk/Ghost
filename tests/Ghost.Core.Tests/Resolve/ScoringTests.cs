@@ -120,8 +120,10 @@ public class ScoringTests
     [Fact]
     public void Score_CompatibleControlType_BoostsScore()
     {
-        var button = MakeElement(name: "download", controlType: "Button");
-        var pane = MakeElement(name: "download", controlType: "Pane");
+        // Prefix match (0.85), not exact, so the base score isn't already saturated at 1.0 —
+        // otherwise the ControlType boost would have nothing to differentiate.
+        var button = MakeElement(name: "download file", controlType: "Button");
+        var pane = MakeElement(name: "download file", controlType: "Pane");
 
         Scoring.Score("download", button, StepAction.Click, 0).Should().BeGreaterThan(Scoring.Score("download", pane, StepAction.Click, 0));
     }
