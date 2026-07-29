@@ -76,7 +76,7 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
 
         var mapped = new List<UiElement>();
 
-        using (var cacheRequest = BuildCacheRequest(automation))
+        var cacheRequest = BuildCacheRequest(automation);
         using (cacheRequest.Activate())
         {
             Walk(window, depth: 1, parentRuntimeId: null, windowBounds, mapped);

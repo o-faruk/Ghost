@@ -9,6 +9,11 @@ namespace Ghost.Core.Resolve;
 /// </summary>
 public static partial class Scoring
 {
+    private static readonly IReadOnlySet<string> ClickCompatible = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+    {
+        "Button", "MenuItem", "Hyperlink", "CheckBox", "RadioButton", "TabItem", "ListItem", "SplitButton", "TreeItem",
+    };
+
     private static readonly IReadOnlyDictionary<StepAction, IReadOnlySet<string>> CompatibleControlTypes =
         new Dictionary<StepAction, IReadOnlySet<string>>
         {
@@ -17,11 +22,6 @@ public static partial class Scoring
             [StepAction.RightClick] = ClickCompatible,
             [StepAction.Type] = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "Edit", "ComboBox", "Document" },
         };
-
-    private static readonly IReadOnlySet<string> ClickCompatible = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-    {
-        "Button", "MenuItem", "Hyperlink", "CheckBox", "RadioButton", "TabItem", "ListItem", "SplitButton", "TreeItem",
-    };
 
     /// <summary>lowercase, strip accelerator markers/trailing ellipsis/surrounding punctuation, collapse whitespace, trim.</summary>
     public static string Normalize(string input)
