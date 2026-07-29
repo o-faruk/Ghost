@@ -125,7 +125,11 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
         var cacheRequest = new CacheRequest
         {
             TreeScope = TreeScope.Descendants,
-            AutomationElementMode = AutomationElementMode.None,
+            // AutomationElementMode.None means "cached properties only, throw if not cached" —
+            // every element's property read was throwing under it, so the cache request wasn't
+            // actually populating for descendants in practice. Full allows a live COM fallback
+            // for anything not cached instead of throwing; Phase 2 revisits for performance.
+            AutomationElementMode = AutomationElementMode.Full,
         };
         cacheRequest.Add(automation.PropertyLibrary.Element.Name);
         cacheRequest.Add(automation.PropertyLibrary.Element.ControlType);
