@@ -35,9 +35,13 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
         _uiaThread = uiaThread;
         _cache = cache;
         _timeout = timeout ?? TimeSpan.FromMilliseconds(2000);
-        // FlaUI's Automation object is itself a COM object; construct it lazily, on the UIA thread,
-        // the first time it's needed, rather than at DI-construction time on an arbitrary thread.
-        _automation = new Lazy<UIA3Automation>(() => _uiaThread.RunAsync(() => new UIA3Automation()).GetAwaiter().GetResult());
+        // FlaUI's Automation object is itself a COM object; construct it lazily, the first time
+        // it's needed, rather than at DI-construction time on an arbitrary thread. First access
+        // always happens from inside Capture(), which already runs on the UIA thread (dispatched
+        // via UiaThread.RunAsync) — constructing it directly here, NOT via another RunAsync call,
+        // is required: routing through RunAsync a second time would enqueue work on the same
+        // single-threaded UiaThread loop that is already busy running Capture(), deadlocking.
+        _automation = new Lazy<UIA3Automation>(() => new UIA3Automation());
     }
 
     /// <inheritdoc />
