@@ -78,22 +78,22 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
         var processName = SafeProcessName(window.Properties.ProcessId.ValueOrDefault);
         var windowTitle = window.Properties.Name.ValueOrDefault ?? string.Empty;
 
-        List<UiElement> mapped;
+        // Phase 1 correctness-first: read each element's properties live (no CacheRequest).
+        // A CacheRequest.Activate() scope around FindAllDescendants() did not actually attach a
+        // cache to the returned elements in practice (every cached-property read threw
+        // regardless of AutomationElementMode) — that batching optimization is explicitly
+        // Phase 2's job ("CacheRequest tuning") per the build spec, so it's deferred rather than
+        // fought further here.
+        var descendants = window.FindAllDescendants();
+        var mapped = descendants
+            .Select(d => Map(d, windowBounds))
+            .Where(e => e is not null)
+            .Select(e => e!)
+            .ToList();
 
-        var cacheRequest = BuildCacheRequest(automation);
-        using (cacheRequest.Activate())
-        {
-            var descendants = window.FindAllDescendants();
-            mapped = descendants
-                .Select(d => Map(d, windowBounds))
-                .Where(e => e is not null)
-                .Select(e => e!)
-                .ToList();
-
-            Log.Debug(
-                "Ghost UIA capture for {ProcessName}: {RawCount} raw descendants, {MappedCount} survived mapping/filtering",
-                processName, descendants.Length, mapped.Count);
-        }
+        Log.Debug(
+            "Ghost UIA capture for {ProcessName}: {RawCount} raw descendants, {MappedCount} survived mapping/filtering",
+            processName, descendants.Length, mapped.Count);
 
         var uncappedCount = mapped.Count;
         var elements = uncappedCount > MaxElements
@@ -118,33 +118,6 @@ public sealed class UiaScreenReader : IScreenReader, IDisposable
             StructureHash = ComputeStructureHash(elements),
             CaptureDuration = sw.Elapsed,
         };
-    }
-
-    private static CacheRequest BuildCacheRequest(UIA3Automation automation)
-    {
-        var cacheRequest = new CacheRequest
-        {
-            TreeScope = TreeScope.Descendants,
-            // AutomationElementMode.None means "cached properties only, throw if not cached" —
-            // every element's property read was throwing under it, so the cache request wasn't
-            // actually populating for descendants in practice. Full allows a live COM fallback
-            // for anything not cached instead of throwing; Phase 2 revisits for performance.
-            AutomationElementMode = AutomationElementMode.Full,
-        };
-        cacheRequest.Add(automation.PropertyLibrary.Element.Name);
-        cacheRequest.Add(automation.PropertyLibrary.Element.ControlType);
-        cacheRequest.Add(automation.PropertyLibrary.Element.AutomationId);
-        cacheRequest.Add(automation.PropertyLibrary.Element.HelpText);
-        cacheRequest.Add(automation.PropertyLibrary.Element.AccessKey);
-        cacheRequest.Add(automation.PropertyLibrary.Element.ClassName);
-        cacheRequest.Add(automation.PropertyLibrary.Element.BoundingRectangle);
-        cacheRequest.Add(automation.PropertyLibrary.Element.IsEnabled);
-        cacheRequest.Add(automation.PropertyLibrary.Element.IsOffscreen);
-        cacheRequest.Add(automation.PropertyLibrary.Element.IsKeyboardFocusable);
-        cacheRequest.Add(automation.PropertyLibrary.Element.ProcessId);
-        cacheRequest.Add(automation.PropertyLibrary.Element.RuntimeId);
-        cacheRequest.Add(automation.PatternLibrary.ValuePattern);
-        return cacheRequest;
     }
 
     private static UiElement? Map(AutomationElement e, PhysicalRect windowBounds)
