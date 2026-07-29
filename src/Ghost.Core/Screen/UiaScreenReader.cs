@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using System.Text;
 using FlaUI.Core;
 using FlaUI.Core.AutomationElements;
-using FlaUI.Core.Caching;
 using FlaUI.Core.Definitions;
 using FlaUI.UIA3;
 using Ghost.Core.Models;
