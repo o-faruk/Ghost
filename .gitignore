@@ -1,0 +1,23 @@
+## .NET / Visual Studio / Rider
+bin/
+obj/
+*.user
+.vs/
+.idea/
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Ghost-specific
+**/config.json
+!config.example.json
+*.local.json
+fixtures/**/*.local.json
+
+## Logs
+logs/
+*.log
+
+## OS
+.DS_Store
+Thumbs.db

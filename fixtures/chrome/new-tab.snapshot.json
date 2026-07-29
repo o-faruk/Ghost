@@ -1,0 +1,42 @@
+{
+  "windowHandle": 66052,
+  "processName": "chrome",
+  "windowTitle": "New Tab - Google Chrome",
+  "windowBounds": { "left": 0, "top": 0, "width": 1920, "height": 1040 },
+  "capturedAt": "2026-07-28T12:00:00-04:00",
+  "structureHash": "fake-hash-chrome-new-tab",
+  "captureDuration": "00:00:00.0080000",
+  "elements": [
+    {
+      "runtimeId": "42.1837.1",
+      "name": "Back",
+      "controlType": "Button",
+      "bounds": { "left": 12, "top": 48, "width": 34, "height": 34 },
+      "isEnabled": false,
+      "isOffscreen": false,
+      "isKeyboardFocusable": true,
+      "depth": 3
+    },
+    {
+      "runtimeId": "42.1837.3",
+      "name": "Address and search bar",
+      "controlType": "Edit",
+      "helpText": "Search Google or type a URL",
+      "bounds": { "left": 220, "top": 88, "width": 1180, "height": 34 },
+      "isEnabled": true,
+      "isOffscreen": false,
+      "isKeyboardFocusable": true,
+      "depth": 3
+    },
+    {
+      "runtimeId": "42.1837.9",
+      "name": "Bookmark this tab",
+      "controlType": "Button",
+      "bounds": { "left": 1410, "top": 88, "width": 28, "height": 28 },
+      "isEnabled": true,
+      "isOffscreen": false,
+      "isKeyboardFocusable": true,
+      "depth": 3
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "windowHandle": 131400,
+  "processName": "explorer",
+  "windowTitle": "Downloads",
+  "windowBounds": { "left": 100, "top": 100, "width": 1000, "height": 700 },
+  "capturedAt": "2026-07-28T12:05:00-04:00",
+  "structureHash": "fake-hash-explorer-downloads",
+  "captureDuration": "00:00:00.0050000",
+  "elements": [
+    {
+      "runtimeId": "7.44.1",
+      "name": "View",
+      "controlType": "MenuItem",
+      "bounds": { "left": 140, "top": 130, "width": 40, "height": 24 },
+      "isEnabled": true,
+      "isOffscreen": false,
+      "isKeyboardFocusable": true,
+      "depth": 2
+    },
+    {
+      "runtimeId": "7.44.5",
+      "name": "Hidden items",
+      "controlType": "CheckBox",
+      "bounds": { "left": 400, "top": 160, "width": 110, "height": 22 },
+      "isEnabled": true,
+      "isOffscreen": false,
+      "isKeyboardFocusable": true,
+      "depth": 4
+    }
+  ]
+}

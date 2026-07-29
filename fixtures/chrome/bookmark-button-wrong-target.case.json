@@ -1,0 +1,9 @@
+{
+  "id": "chrome-bookmark-button-deliberately-unresolvable",
+  "snapshot": "new-tab.snapshot.json",
+  "action": "Click",
+  "targetDescription": "the star icon that saves this page to reading list",
+  "expectedRuntimeId": "42.1837.9",
+  "expectedRect": { "left": 1410, "top": 88, "width": 28, "height": 28 },
+  "notes": "deliberately phrased so the Phase 0 placeholder's exact-name matcher fails; demonstrates the report's failure path until the real Scoring engine lands in Phase 1"
+}

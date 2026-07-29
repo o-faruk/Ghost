@@ -1,0 +1,18 @@
+{
+  "apiKey": "",
+  "models": {
+    "planner": "claude-sonnet-5",
+    "resolver": "claude-haiku-4-5-20251001",
+    "vision": "claude-sonnet-5"
+  },
+  "pricing": {
+    "claude-sonnet-5":            { "inputPerMTok": 2.00, "outputPerMTok": 10.00 },
+    "claude-haiku-4-5-20251001":  { "inputPerMTok": 1.00, "outputPerMTok": 5.00 }
+  },
+  "hotkey": "Ctrl+G",
+  "tiers": { "llmDisambiguation": true, "ocr": false, "vision": false },
+  "timeouts": { "captureMs": 2000, "resolveMs": 3000, "planMs": 8000, "settleMs": 3000 },
+  "thresholds": { "acceptScore": 0.80, "acceptMargin": 0.15, "nearMissPx": 40 },
+  "overlay": { "spriteSize": 24, "followOffset": [18, 18], "showRing": true },
+  "logging": { "level": "Information", "fileRetentionDays": 7 }
+}
