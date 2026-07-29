@@ -1,0 +1,2460 @@
+{
+  "WindowHandle": 1378022,
+  "ProcessName": "brave",
+  "WindowTitle": "New Tab - Brave",
+  "WindowBounds": {
+    "Left": -8,
+    "Top": -8,
+    "Width": 2576,
+    "Height": 1408,
+    "Right": 2568,
+    "Bottom": 1400,
+    "Center": {
+      "X": 1280,
+      "Y": 696
+    },
+    "Area": 3627008,
+    "IsDegenerate": false
+  },
+  "Elements": [
+    {
+      "RuntimeId": "42.1378022.4.0.0.76236",
+      "Name": "New Tab - Brave",
+      "ControlType": "Pane",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveBrowserRootView",
+      "Value": null,
+      "Bounds": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 2560,
+        "Height": 1392,
+        "Right": 2560,
+        "Bottom": 1392,
+        "Center": {
+          "X": 1280,
+          "Y": 696
+        },
+        "Area": 3563520,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76246",
+      "Name": "Minimize",
+      "ControlType": "Button",
+      "AutomationId": "view_1",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "WindowsCaptionButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2423,
+        "Top": 0,
+        "Width": 45,
+        "Height": 40,
+        "Right": 2468,
+        "Bottom": 40,
+        "Center": {
+          "X": 2445,
+          "Y": 20
+        },
+        "Area": 1800,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76251",
+      "Name": "Restore",
+      "ControlType": "Button",
+      "AutomationId": "view_3",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "WindowsCaptionButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2468,
+        "Top": 0,
+        "Width": 46,
+        "Height": 40,
+        "Right": 2514,
+        "Bottom": 40,
+        "Center": {
+          "X": 2491,
+          "Y": 20
+        },
+        "Area": 1840,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76253",
+      "Name": "Close",
+      "ControlType": "Button",
+      "AutomationId": "view_4",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "WindowsCaptionButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2514,
+        "Top": 0,
+        "Width": 46,
+        "Height": 40,
+        "Right": 2560,
+        "Bottom": 40,
+        "Center": {
+          "X": 2537,
+          "Y": 20
+        },
+        "Area": 1840,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76177",
+      "Name": "",
+      "ControlType": "ToolBar",
+      "AutomationId": "view_1000",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveToolbarView",
+      "Value": null,
+      "Bounds": {
+        "Left": 0,
+        "Top": 40,
+        "Width": 2560,
+        "Height": 40,
+        "Right": 2560,
+        "Bottom": 80,
+        "Center": {
+          "X": 1280,
+          "Y": 60
+        },
+        "Area": 102400,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76302",
+      "Name": "Back",
+      "ControlType": "Button",
+      "AutomationId": "view_1001",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BackForwardButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 0,
+        "Top": 46,
+        "Width": 34,
+        "Height": 28,
+        "Right": 34,
+        "Bottom": 74,
+        "Center": {
+          "X": 17,
+          "Y": 60
+        },
+        "Area": 952,
+        "IsDegenerate": false
+      },
+      "IsEnabled": false,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76307",
+      "Name": "Forward",
+      "ControlType": "Button",
+      "AutomationId": "view_1002",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BackForwardButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 36,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 64,
+        "Bottom": 74,
+        "Center": {
+          "X": 50,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": false,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76312",
+      "Name": "Reload",
+      "ControlType": "Button",
+      "AutomationId": "view_1003",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "ReloadButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 66,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 94,
+        "Bottom": 74,
+        "Center": {
+          "X": 80,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76769",
+      "Name": "Bookmark this tab",
+      "ControlType": "Button",
+      "AutomationId": "view_1005",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveBookmarkButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 703,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 731,
+        "Bottom": 74,
+        "Center": {
+          "X": 717,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76381",
+      "Name": "Search icon",
+      "ControlType": "Document",
+      "AutomationId": "view_1011",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "LocationIconView",
+      "Value": null,
+      "Bounds": {
+        "Left": 742,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 770,
+        "Bottom": 74,
+        "Center": {
+          "X": 756,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76388",
+      "Name": "Address and search bar",
+      "ControlType": "Edit",
+      "AutomationId": "view_1012",
+      "HelpText": "Search Google or type a URL",
+      "AccessKey": null,
+      "ClassName": "BraveOmniboxViewViews",
+      "Value": null,
+      "Bounds": {
+        "Left": 778,
+        "Top": 46,
+        "Width": 957,
+        "Height": 28,
+        "Right": 1735,
+        "Bottom": 74,
+        "Center": {
+          "X": 1256,
+          "Y": 60
+        },
+        "Area": 26796,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76753",
+      "Name": "Separator",
+      "ControlType": "Separator",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "RoundedSeparator",
+      "Value": null,
+      "Bounds": {
+        "Left": 1743,
+        "Top": 52,
+        "Width": 7,
+        "Height": 16,
+        "Right": 1750,
+        "Bottom": 68,
+        "Center": {
+          "X": 1746,
+          "Y": 60
+        },
+        "Area": 112,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76759",
+      "Name": "Brave Shields",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveShieldsActionView",
+      "Value": null,
+      "Bounds": {
+        "Left": 1750,
+        "Top": 46,
+        "Width": 34,
+        "Height": 28,
+        "Right": 1784,
+        "Bottom": 74,
+        "Center": {
+          "X": 1767,
+          "Y": 60
+        },
+        "Area": 952,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76754",
+      "Name": "Brave Rewards",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveRewardsActionView",
+      "Value": null,
+      "Bounds": {
+        "Left": 1784,
+        "Top": 46,
+        "Width": 34,
+        "Height": 28,
+        "Right": 1818,
+        "Bottom": 74,
+        "Center": {
+          "X": 1801,
+          "Y": 60
+        },
+        "Area": 952,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76261",
+      "Name": "Extensions",
+      "ControlType": "Button",
+      "AutomationId": "view_1006",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "ExtensionsToolbarButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2298,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 2326,
+        "Bottom": 74,
+        "Center": {
+          "X": 2312,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76331",
+      "Name": "Tab search - pinned",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "PinnedActionToolbarButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2328,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 2356,
+        "Bottom": 74,
+        "Center": {
+          "X": 2342,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76297",
+      "Name": "Control your music, videos, and more",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "MediaToolbarButtonView",
+      "Value": null,
+      "Bounds": {
+        "Left": 2376,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 2404,
+        "Bottom": 74,
+        "Center": {
+          "X": 2390,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76774",
+      "Name": "Show sidebar",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "SidePanelButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2406,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 2434,
+        "Bottom": 74,
+        "Center": {
+          "X": 2420,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76779",
+      "Name": "Brave Wallet",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "WalletButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2436,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 2464,
+        "Bottom": 74,
+        "Center": {
+          "X": 2450,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76784",
+      "Name": "Leo AI",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "AIChatButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2466,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 2494,
+        "Bottom": 74,
+        "Center": {
+          "X": 2480,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76789",
+      "Name": "VPN",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveVPNButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2496,
+        "Top": 46,
+        "Width": 28,
+        "Height": 28,
+        "Right": 2524,
+        "Bottom": 74,
+        "Center": {
+          "X": 2510,
+          "Y": 60
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76362",
+      "Name": "Brave",
+      "ControlType": "Button",
+      "AutomationId": "view_1007",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveBrowserAppMenuButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 2526,
+        "Top": 46,
+        "Width": 34,
+        "Height": 28,
+        "Right": 2560,
+        "Bottom": 74,
+        "Center": {
+          "X": 2543,
+          "Y": 60
+        },
+        "Area": 952,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76866",
+      "Name": "Bookmarks",
+      "ControlType": "ToolBar",
+      "AutomationId": "view_1025",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveBookmarkBarView",
+      "Value": null,
+      "Bounds": {
+        "Left": 0,
+        "Top": 80,
+        "Width": 2560,
+        "Height": 34,
+        "Right": 2560,
+        "Bottom": 114,
+        "Center": {
+          "X": 1280,
+          "Y": 97
+        },
+        "Area": 87040,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76877",
+      "Name": "Saved Tab Groups",
+      "ControlType": "ToolBar",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "SavedTabGroupBar",
+      "Value": null,
+      "Bounds": {
+        "Left": 6,
+        "Top": 81,
+        "Width": 36,
+        "Height": 28,
+        "Right": 42,
+        "Bottom": 109,
+        "Center": {
+          "X": 24,
+          "Y": 95
+        },
+        "Area": 1008,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76883",
+      "Name": "Tab groups",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "SavedTabGroupOverflowButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 6,
+        "Top": 81,
+        "Width": 28,
+        "Height": 28,
+        "Right": 34,
+        "Bottom": 109,
+        "Center": {
+          "X": 20,
+          "Y": 95
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76888",
+      "Name": "Separator",
+      "ControlType": "Separator",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BookmarkBarView::ButtonSeparatorView",
+      "Value": null,
+      "Bounds": {
+        "Left": 42,
+        "Top": 87,
+        "Width": 10,
+        "Height": 16,
+        "Right": 52,
+        "Bottom": 103,
+        "Center": {
+          "X": 47,
+          "Y": 95
+        },
+        "Area": 160,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76900",
+      "Name": "YouTube",
+      "ControlType": "Button",
+      "AutomationId": "view_1028",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BookmarkButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 52,
+        "Top": 81,
+        "Width": 80,
+        "Height": 28,
+        "Right": 132,
+        "Bottom": 109,
+        "Center": {
+          "X": 92,
+          "Y": 95
+        },
+        "Area": 2240,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76905",
+      "Name": "Hulu",
+      "ControlType": "Button",
+      "AutomationId": "view_1028",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BookmarkButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 136,
+        "Top": 81,
+        "Width": 60,
+        "Height": 28,
+        "Right": 196,
+        "Bottom": 109,
+        "Center": {
+          "X": 166,
+          "Y": 95
+        },
+        "Area": 1680,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76910",
+      "Name": "Spotify",
+      "ControlType": "Button",
+      "AutomationId": "view_1028",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BookmarkButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 200,
+        "Top": 81,
+        "Width": 71,
+        "Height": 28,
+        "Right": 271,
+        "Bottom": 109,
+        "Center": {
+          "X": 235,
+          "Y": 95
+        },
+        "Area": 1988,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76915",
+      "Name": "Gmail",
+      "ControlType": "Button",
+      "AutomationId": "view_1028",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BookmarkButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 275,
+        "Top": 81,
+        "Width": 65,
+        "Height": 28,
+        "Right": 340,
+        "Bottom": 109,
+        "Center": {
+          "X": 307,
+          "Y": 95
+        },
+        "Area": 1820,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76920",
+      "Name": "Steam",
+      "ControlType": "Button",
+      "AutomationId": "view_1028",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BookmarkButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 344,
+        "Top": 81,
+        "Width": 67,
+        "Height": 28,
+        "Right": 411,
+        "Bottom": 109,
+        "Center": {
+          "X": 377,
+          "Y": 95
+        },
+        "Area": 1876,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76925",
+      "Name": "Outlook",
+      "ControlType": "Button",
+      "AutomationId": "view_1028",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BookmarkButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 415,
+        "Top": 81,
+        "Width": 77,
+        "Height": 28,
+        "Right": 492,
+        "Bottom": 109,
+        "Center": {
+          "X": 453,
+          "Y": 95
+        },
+        "Area": 2156,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76930",
+      "Name": "LinkedIn",
+      "ControlType": "Button",
+      "AutomationId": "view_1028",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BookmarkButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 496,
+        "Top": 81,
+        "Width": 79,
+        "Height": 28,
+        "Right": 575,
+        "Bottom": 109,
+        "Center": {
+          "X": 535,
+          "Y": 95
+        },
+        "Area": 2212,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.1",
+      "Name": "New Tab",
+      "ControlType": "Document",
+      "AutomationId": "RootWebArea",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": "chrome://newtab/",
+      "Bounds": {
+        "Left": 0,
+        "Top": 115,
+        "Width": 2560,
+        "Height": 1277,
+        "Right": 2560,
+        "Bottom": 1392,
+        "Center": {
+          "X": 1280,
+          "Y": 753
+        },
+        "Area": 3269120,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.100",
+      "Name": "7:18 PM",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "clock",
+      "Value": null,
+      "Bounds": {
+        "Left": 24,
+        "Top": 139,
+        "Width": 136,
+        "Height": 72,
+        "Right": 160,
+        "Bottom": 211,
+        "Center": {
+          "X": 92,
+          "Y": 175
+        },
+        "Area": 9792,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.101",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "settings",
+      "Value": null,
+      "Bounds": {
+        "Left": 2487,
+        "Top": 139,
+        "Width": 34,
+        "Height": 34,
+        "Right": 2521,
+        "Bottom": 173,
+        "Center": {
+          "X": 2504,
+          "Y": 156
+        },
+        "Area": 1156,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.231",
+      "Name": "Search the web",
+      "ControlType": "Edit",
+      "AutomationId": null,
+      "HelpText": "Search the web",
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1110,
+        "Top": 192,
+        "Width": 323,
+        "Height": 22,
+        "Right": 1433,
+        "Bottom": 214,
+        "Center": {
+          "X": 1271,
+          "Y": 203
+        },
+        "Area": 7106,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.276",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1072,
+        "Top": 188,
+        "Width": 31,
+        "Height": 30,
+        "Right": 1103,
+        "Bottom": 218,
+        "Center": {
+          "X": 1087,
+          "Y": 203
+        },
+        "Area": 930,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.267",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "leoButton isPlainFaint isMedium fab svelte-olvzxz",
+      "Value": null,
+      "Bounds": {
+        "Left": 1079,
+        "Top": 195,
+        "Width": 17,
+        "Height": 16,
+        "Right": 1096,
+        "Bottom": 211,
+        "Center": {
+          "X": 1087,
+          "Y": 203
+        },
+        "Area": 272,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.256",
+      "Name": "Photo by Doncoombez",
+      "ControlType": "Hyperlink",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "photo-credits",
+      "Value": "https://unsplash.com/photos/delicate-white-blossoms-on-a-tree-branch-UNeHrHb7eII",
+      "Bounds": {
+        "Left": 488,
+        "Top": 1206,
+        "Width": 113,
+        "Height": 15,
+        "Right": 601,
+        "Bottom": 1221,
+        "Center": {
+          "X": 544,
+          "Y": 1213
+        },
+        "Area": 1695,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2393",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 962,
+        "Top": 1260,
+        "Width": 27,
+        "Height": 28,
+        "Right": 989,
+        "Bottom": 1288,
+        "Center": {
+          "X": 975,
+          "Y": 1274
+        },
+        "Area": 756,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2382",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "leoButton isPlainFaint isSmall fab svelte-olvzxz",
+      "Value": null,
+      "Bounds": {
+        "Left": 966,
+        "Top": 1264,
+        "Width": 19,
+        "Height": 18,
+        "Right": 985,
+        "Bottom": 1282,
+        "Center": {
+          "X": 975,
+          "Y": 1273
+        },
+        "Area": 342,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2411",
+      "Name": "STATS",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 504,
+        "Top": 1265,
+        "Width": 34,
+        "Height": 16,
+        "Right": 538,
+        "Bottom": 1281,
+        "Center": {
+          "X": 521,
+          "Y": 1273
+        },
+        "Area": 544,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2412",
+      "Name": "119,107",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 504,
+        "Top": 1302,
+        "Width": 63,
+        "Height": 28,
+        "Right": 567,
+        "Bottom": 1330,
+        "Center": {
+          "X": 535,
+          "Y": 1316
+        },
+        "Area": 1764,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2413",
+      "Name": "Trackers \u0026 ads blocked",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 504,
+        "Top": 1329,
+        "Width": 113,
+        "Height": 16,
+        "Right": 617,
+        "Bottom": 1345,
+        "Center": {
+          "X": 560,
+          "Y": 1337
+        },
+        "Area": 1808,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2414",
+      "Name": "1",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 725,
+        "Top": 1302,
+        "Width": 9,
+        "Height": 28,
+        "Right": 734,
+        "Bottom": 1330,
+        "Center": {
+          "X": 729,
+          "Y": 1316
+        },
+        "Area": 252,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2415",
+      "Name": ".",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 733,
+        "Top": 1302,
+        "Width": 6,
+        "Height": 28,
+        "Right": 739,
+        "Bottom": 1330,
+        "Center": {
+          "X": 736,
+          "Y": 1316
+        },
+        "Area": 168,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2416",
+      "Name": "69",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 738,
+        "Top": 1302,
+        "Width": 23,
+        "Height": 28,
+        "Right": 761,
+        "Bottom": 1330,
+        "Center": {
+          "X": 749,
+          "Y": 1316
+        },
+        "Area": 644,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2417",
+      "Name": " ",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 760,
+        "Top": 1302,
+        "Width": 7,
+        "Height": 28,
+        "Right": 767,
+        "Bottom": 1330,
+        "Center": {
+          "X": 763,
+          "Y": 1316
+        },
+        "Area": 196,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2409",
+      "Name": "GB",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 766,
+        "Top": 1309,
+        "Width": 19,
+        "Height": 20,
+        "Right": 785,
+        "Bottom": 1329,
+        "Center": {
+          "X": 775,
+          "Y": 1319
+        },
+        "Area": 380,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2418",
+      "Name": "Bandwidth saved",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 725,
+        "Top": 1330,
+        "Width": 84,
+        "Height": 16,
+        "Right": 809,
+        "Bottom": 1346,
+        "Center": {
+          "X": 767,
+          "Y": 1338
+        },
+        "Area": 1344,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2419",
+      "Name": "1",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 917,
+        "Top": 1302,
+        "Width": 9,
+        "Height": 28,
+        "Right": 926,
+        "Bottom": 1330,
+        "Center": {
+          "X": 921,
+          "Y": 1316
+        },
+        "Area": 252,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2420",
+      "Name": ".",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 925,
+        "Top": 1302,
+        "Width": 6,
+        "Height": 28,
+        "Right": 931,
+        "Bottom": 1330,
+        "Center": {
+          "X": 928,
+          "Y": 1316
+        },
+        "Area": 168,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2421",
+      "Name": "7",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 930,
+        "Top": 1302,
+        "Width": 11,
+        "Height": 28,
+        "Right": 941,
+        "Bottom": 1330,
+        "Center": {
+          "X": 935,
+          "Y": 1316
+        },
+        "Area": 308,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2422",
+      "Name": " ",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 940,
+        "Top": 1302,
+        "Width": 7,
+        "Height": 28,
+        "Right": 947,
+        "Bottom": 1330,
+        "Center": {
+          "X": 943,
+          "Y": 1316
+        },
+        "Area": 196,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2410",
+      "Name": "Hours",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 946,
+        "Top": 1309,
+        "Width": 39,
+        "Height": 20,
+        "Right": 985,
+        "Bottom": 1329,
+        "Center": {
+          "X": 965,
+          "Y": 1319
+        },
+        "Area": 780,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2423",
+      "Name": "Time saved",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 917,
+        "Top": 1330,
+        "Width": 55,
+        "Height": 16,
+        "Right": 972,
+        "Bottom": 1346,
+        "Center": {
+          "X": 944,
+          "Y": 1338
+        },
+        "Area": 880,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2403",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1490,
+        "Top": 1260,
+        "Width": 27,
+        "Height": 28,
+        "Right": 1517,
+        "Bottom": 1288,
+        "Center": {
+          "X": 1503,
+          "Y": 1274
+        },
+        "Area": 756,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2398",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "leoButton isPlainFaint isSmall fab svelte-olvzxz",
+      "Value": null,
+      "Bounds": {
+        "Left": 1494,
+        "Top": 1264,
+        "Width": 19,
+        "Height": 18,
+        "Right": 1513,
+        "Bottom": 1282,
+        "Center": {
+          "X": 1503,
+          "Y": 1273
+        },
+        "Area": 342,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2424",
+      "Name": "NEWS",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1032,
+        "Top": 1265,
+        "Width": 35,
+        "Height": 16,
+        "Right": 1067,
+        "Bottom": 1281,
+        "Center": {
+          "X": 1049,
+          "Y": 1273
+        },
+        "Area": 560,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2325",
+      "Name": "Decider \u2022 Film and TV Stream It Or Skip It: \u2018The Devil\u2019s Mouth\u2019 on Prime Video, a Shark-Attack Flick Without a Single Fresh Idea",
+      "ControlType": "Hyperlink",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "peek",
+      "Value": "https://decider.com/2026/07/29/the-devils-mouth-prime-video-review-stream-it-or-skip-it/",
+      "Bounds": {
+        "Left": 1032,
+        "Top": 1290,
+        "Width": 481,
+        "Height": 70,
+        "Right": 1513,
+        "Bottom": 1360,
+        "Center": {
+          "X": 1272,
+          "Y": 1325
+        },
+        "Area": 33670,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.2321",
+      "Name": "",
+      "ControlType": "Image",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "loaded",
+      "Value": null,
+      "Bounds": {
+        "Left": 1032,
+        "Top": 1301,
+        "Width": 72,
+        "Height": 48,
+        "Right": 1104,
+        "Bottom": 1349,
+        "Center": {
+          "X": 1068,
+          "Y": 1325
+        },
+        "Area": 3456,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.332",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "active",
+      "Value": null,
+      "Bounds": {
+        "Left": 1544,
+        "Top": 1248,
+        "Width": 49,
+        "Height": 43,
+        "Right": 1593,
+        "Bottom": 1291,
+        "Center": {
+          "X": 1568,
+          "Y": 1269
+        },
+        "Area": 2107,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.333",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1544,
+        "Top": 1290,
+        "Width": 49,
+        "Height": 44,
+        "Right": 1593,
+        "Bottom": 1334,
+        "Center": {
+          "X": 1568,
+          "Y": 1312
+        },
+        "Area": 2156,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.334",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1544,
+        "Top": 1333,
+        "Width": 49,
+        "Height": 43,
+        "Right": 1593,
+        "Bottom": 1376,
+        "Center": {
+          "X": 1568,
+          "Y": 1354
+        },
+        "Area": 2107,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.465",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 2018,
+        "Top": 1260,
+        "Width": 27,
+        "Height": 28,
+        "Right": 2045,
+        "Bottom": 1288,
+        "Center": {
+          "X": 2031,
+          "Y": 1274
+        },
+        "Area": 756,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.460",
+      "Name": "",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "leoButton isPlainFaint isSmall fab svelte-olvzxz",
+      "Value": null,
+      "Bounds": {
+        "Left": 2022,
+        "Top": 1264,
+        "Width": 19,
+        "Height": 18,
+        "Right": 2041,
+        "Bottom": 1282,
+        "Center": {
+          "X": 2031,
+          "Y": 1273
+        },
+        "Area": 342,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.497",
+      "Name": "BRAVE VPN",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1632,
+        "Top": 1265,
+        "Width": 64,
+        "Height": 16,
+        "Right": 1696,
+        "Bottom": 1281,
+        "Center": {
+          "X": 1664,
+          "Y": 1273
+        },
+        "Area": 1024,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.498",
+      "Name": "Powered by",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1711,
+        "Top": 1265,
+        "Width": 58,
+        "Height": 15,
+        "Right": 1769,
+        "Bottom": 1280,
+        "Center": {
+          "X": 1740,
+          "Y": 1272
+        },
+        "Area": 870,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.341",
+      "Name": "",
+      "ControlType": "Image",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1772,
+        "Top": 1267,
+        "Width": 56,
+        "Height": 12,
+        "Right": 1828,
+        "Bottom": 1279,
+        "Center": {
+          "X": 1800,
+          "Y": 1273
+        },
+        "Area": 672,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.499",
+      "Name": "Extra privacy \u0026 security online",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1628,
+        "Top": 1290,
+        "Width": 147,
+        "Height": 15,
+        "Right": 1775,
+        "Bottom": 1305,
+        "Center": {
+          "X": 1701,
+          "Y": 1297
+        },
+        "Area": 2205,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.500",
+      "Name": "Hide your IP \u0026 change your location",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1628,
+        "Top": 1310,
+        "Width": 178,
+        "Height": 15,
+        "Right": 1806,
+        "Bottom": 1325,
+        "Center": {
+          "X": 1717,
+          "Y": 1317
+        },
+        "Area": 2670,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.501",
+      "Name": "Protect every app on your device",
+      "ControlType": "Text",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": null,
+      "Value": null,
+      "Bounds": {
+        "Left": 1628,
+        "Top": 1330,
+        "Width": 161,
+        "Height": 15,
+        "Right": 1789,
+        "Bottom": 1345,
+        "Center": {
+          "X": 1708,
+          "Y": 1337
+        },
+        "Area": 2415,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.470",
+      "Name": "Start free trial",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "leoButton isFilled isSmall svelte-olvzxz",
+      "Value": null,
+      "Bounds": {
+        "Left": 1933,
+        "Top": 1290,
+        "Width": 108,
+        "Height": 36,
+        "Right": 2041,
+        "Bottom": 1326,
+        "Center": {
+          "X": 1987,
+          "Y": 1308
+        },
+        "Area": 3888,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1705320.4.120.5.354",
+      "Name": "Already purchased?",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "restore",
+      "Value": null,
+      "Bounds": {
+        "Left": 1939,
+        "Top": 1330,
+        "Width": 96,
+        "Height": 16,
+        "Right": 2035,
+        "Bottom": 1346,
+        "Center": {
+          "X": 1987,
+          "Y": 1338
+        },
+        "Area": 1536,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1705320.4.120.5"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76221",
+      "Name": "",
+      "ControlType": "Tab",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveTabContainer",
+      "Value": null,
+      "Bounds": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 248,
+        "Height": 40,
+        "Right": 248,
+        "Bottom": 40,
+        "Center": {
+          "X": 124,
+          "Y": 20
+        },
+        "Area": 9920,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": false,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76854",
+      "Name": "New Tab",
+      "ControlType": "TabItem",
+      "AutomationId": "view_20",
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveTab",
+      "Value": null,
+      "Bounds": {
+        "Left": 0,
+        "Top": 0,
+        "Width": 248,
+        "Height": 40,
+        "Right": 248,
+        "Bottom": 40,
+        "Center": {
+          "X": 124,
+          "Y": 20
+        },
+        "Area": 9920,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76859",
+      "Name": "Close",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "TabCloseButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 215,
+        "Top": 6,
+        "Width": 28,
+        "Height": 28,
+        "Right": 243,
+        "Bottom": 34,
+        "Center": {
+          "X": 229,
+          "Y": 20
+        },
+        "Area": 784,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76205",
+      "Name": "New Tab",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "BraveNewTabButton",
+      "Value": null,
+      "Bounds": {
+        "Left": 252,
+        "Top": 0,
+        "Width": 28,
+        "Height": 40,
+        "Right": 280,
+        "Bottom": 40,
+        "Center": {
+          "X": 266,
+          "Y": 20
+        },
+        "Area": 1120,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76828",
+      "Name": "Leo AI",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "SidebarItemView",
+      "Value": null,
+      "Bounds": {
+        "Left": 2561,
+        "Top": 123,
+        "Width": 44,
+        "Height": 28,
+        "Right": 2605,
+        "Bottom": 151,
+        "Center": {
+          "X": 2583,
+          "Y": 137
+        },
+        "Area": 1232,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76833",
+      "Name": "Brave Talk",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "SidebarItemView",
+      "Value": null,
+      "Bounds": {
+        "Left": 2561,
+        "Top": 159,
+        "Width": 44,
+        "Height": 28,
+        "Right": 2605,
+        "Bottom": 187,
+        "Center": {
+          "X": 2583,
+          "Y": 173
+        },
+        "Area": 1232,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76838",
+      "Name": "Brave Wallet",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "SidebarItemView",
+      "Value": null,
+      "Bounds": {
+        "Left": 2561,
+        "Top": 195,
+        "Width": 44,
+        "Height": 28,
+        "Right": 2605,
+        "Bottom": 223,
+        "Center": {
+          "X": 2583,
+          "Y": 209
+        },
+        "Area": 1232,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76843",
+      "Name": "Bookmarks",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "SidebarItemView",
+      "Value": null,
+      "Bounds": {
+        "Left": 2561,
+        "Top": 231,
+        "Width": 44,
+        "Height": 28,
+        "Right": 2605,
+        "Bottom": 259,
+        "Center": {
+          "X": 2583,
+          "Y": 245
+        },
+        "Area": 1232,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    },
+    {
+      "RuntimeId": "42.1378022.4.0.0.76848",
+      "Name": "Reading List",
+      "ControlType": "Button",
+      "AutomationId": null,
+      "HelpText": null,
+      "AccessKey": null,
+      "ClassName": "SidebarItemView",
+      "Value": null,
+      "Bounds": {
+        "Left": 2561,
+        "Top": 267,
+        "Width": 44,
+        "Height": 28,
+        "Right": 2605,
+        "Bottom": 295,
+        "Center": {
+          "X": 2583,
+          "Y": 281
+        },
+        "Area": 1232,
+        "IsDegenerate": false
+      },
+      "IsEnabled": true,
+      "IsOffscreen": false,
+      "IsKeyboardFocusable": true,
+      "Depth": 6,
+      "ParentRuntimeId": "42.1378022.4.0.0"
+    }
+  ],
+  "CapturedAt": "2026-07-29T19:18:31.8434403-04:00",
+  "StructureHash": "D94EFBD4394E275974DA1B2FFE63BA6134BCEBA6A7987CDE8B5D27023EBD473D",
+  "CaptureDuration": "00:00:00.9869161"
+}
