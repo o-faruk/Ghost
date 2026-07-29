@@ -1,0 +1,9 @@
+{
+  "id": "chrome-new-tab-plain-address-bar",
+  "snapshot": "new-tab-plain.snapshot.json",
+  "action": "Click",
+  "targetDescription": "Address and search bar",
+  "expectedRuntimeId": "42.1378022.4.0.0.76388",
+  "expectedRect": { "left": 778, "top": 46, "width": 957, "height": 28 },
+  "notes": "live capture from a real browser (Brave) New Tab page, not a hand-authored snapshot — the address-bar historical failure case from Ghost v1, now against a live capture"
+}

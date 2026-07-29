@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Ghost.Core.Models;
+using Serilog;
 
 namespace Ghost.Core.Resolve;
 
@@ -32,8 +33,16 @@ public sealed class DeterministicResolver : IResolver
             .OrderByDescending(x => x.Score)
             .ToList();
 
+        foreach (var (element, score) in scored.Take(5))
+        {
+            Log.Debug(
+                "  candidate {Score:0.000} {ControlType} \"{Name}\" (help=\"{HelpText}\" autoId=\"{AutomationId}\")",
+                score, element.ControlType, element.Name, element.HelpText, element.AutomationId);
+        }
+
         if (scored.Count == 0)
         {
+            Log.Debug("DeterministicResolver: no candidates scored > 0 for \"{TargetDescription}\"", step.TargetDescription);
             return Task.FromResult<Resolution?>(null);
         }
 
@@ -42,6 +51,9 @@ public sealed class DeterministicResolver : IResolver
 
         if (top.Score < _acceptScore || (top.Score - second) < _acceptMargin)
         {
+            Log.Debug(
+                "DeterministicResolver: escalating \"{TargetDescription}\" — top {Top:0.000} second {Second:0.000} (need >= {AcceptScore} and margin >= {AcceptMargin})",
+                step.TargetDescription, top.Score, second, _acceptScore, _acceptMargin);
             return Task.FromResult<Resolution?>(null);
         }
 

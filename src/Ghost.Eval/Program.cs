@@ -8,9 +8,9 @@ using Ghost.Eval;
 var fixturesRoot = Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "fixtures");
 fixturesRoot = Path.GetFullPath(fixturesRoot);
 
-// `capture` is where UIA filtering decisions matter most; run it at Debug so skip reasons
-// (offscreen, degenerate bounds, mapping exceptions) are visible instead of silently swallowed.
-var logLevel = args.Length > 0 && args[0] == "capture" ? "Debug" : "Warning";
+// `capture` and `run` are where the interesting decisions happen (UIA filtering, and resolver
+// scoring/acceptance respectively); run both at Debug so those are visible instead of swallowed.
+var logLevel = args.Length > 0 && (args[0] == "capture" || args[0] == "run") ? "Debug" : "Warning";
 LoggingSetup.Configure(new LoggingConfig { Level = logLevel, FileRetentionDays = 7 });
 
 if (args.Length == 0)
