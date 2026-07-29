@@ -31,8 +31,11 @@ and p95 latency on that path. Eval numbers land here as later phases complete.
 
 ## Status
 
-Phase 0 — scaffold, domain models, eval harness. See `Ghost.sln` build phases in the project
-spec for what's next.
+Phase 1 — UIA screen reader (`UiaThread`, `UiaScreenReader`, `SnapshotCache`) and the
+deterministic resolver (`Scoring`, `DeterministicResolver`) are in. `Ghost.Eval capture` reads a
+live foreground window; `Ghost.Eval run` replays fixtures through the real Tier 1 resolver. See
+`Ghost.sln` build phases in the project spec for what's next (Phase 2: performance tuning and
+pre-warming).
 
 ## Repository layout
 

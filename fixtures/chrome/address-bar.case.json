@@ -2,7 +2,7 @@
   "id": "chrome-address-bar",
   "snapshot": "new-tab.snapshot.json",
   "action": "Click",
-  "targetDescription": "the address bar where you type a URL, also called Address and search bar",
+  "targetDescription": "Address and search bar",
   "expectedRuntimeId": "42.1837.3",
   "expectedRect": { "left": 220, "top": 88, "width": 1180, "height": 34 },
   "notes": "the historical failure case from Ghost v1"

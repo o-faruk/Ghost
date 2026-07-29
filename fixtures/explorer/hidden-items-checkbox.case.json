@@ -2,7 +2,7 @@
   "id": "explorer-hidden-items-checkbox",
   "snapshot": "downloads-folder.snapshot.json",
   "action": "Click",
-  "targetDescription": "the Hidden items checkbox in the View ribbon",
+  "targetDescription": "Hidden items",
   "expectedRuntimeId": "7.44.5",
   "expectedRect": { "left": 400, "top": 160, "width": 110, "height": 22 },
   "notes": "hand-written Phase 0 fixture, not yet a live capture"
